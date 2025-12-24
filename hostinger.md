@@ -66,3 +66,5 @@ Once the repository is added, it will appear in the "Manage Repositories" list o
 2.  You should see the Anzio Restaurant home page.
 3.  Open Developer Tools (F12) → Console.
 4.  Verify the message: \*"Anzio System Loaded
+
+done
