@@ -1,0 +1,117 @@
+:root {
+  --primary-color: #2d3436;
+  --accent-color: #0984e3;
+  --sketch-border: 2px solid #2d3436;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #2d3436;
+  overflow-x: hidden;
+  background-color: #fdfdfd;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand,
+.btn-sketch-cta {
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* Navbar */
+.sketch-nav {
+  background: white;
+  border-bottom: var(--sketch-border);
+}
+
+/* Age Badge Styling */
+.age-badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 1px solid #2d3436;
+  border-radius: 15px 5px 15px 5px / 5px 15px 5px 15px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  color: #2d3436;
+}
+
+/* Sketch Effects */
+.sketch-card {
+  border: var(--sketch-border);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  transition: transform 0.3s ease;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sketch-card:hover {
+  transform: translateY(-5px) rotate(-1deg);
+}
+
+.sketch-underline {
+  border-bottom: 3px solid #fdcb6e;
+  line-height: 1.1;
+  padding-bottom: 5px;
+}
+
+.sketch-input {
+  border: var(--sketch-border);
+  border-radius: 4px 10px 4px 10px / 10px 4px 10px 4px;
+}
+
+/* Image Frame */
+.sketch-image-frame {
+  border: var(--sketch-border);
+  padding: 10px;
+  background: #fff;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.sketch-img {
+  border-radius: 15px 80px 15px 80px / 80px 15px 80px 15px;
+  transition: transform 0.5s ease;
+}
+
+.sketch-image-frame:hover .sketch-img {
+  transform: scale(1.03) rotate(1deg);
+}
+
+/* Buttons */
+.btn-sketch-cta {
+  background-color: #fdcb6e;
+  border: var(--sketch-border);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 10px 30px;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.btn-sketch-cta:hover {
+  background-color: #f1c40f;
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+  height: 80vh;
+  background: url('../assets/hero.png') center/cover no-repeat;
+  position: relative;
+  margin-top: 60px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sketch-quote {
+  border-left: 5px solid #fdcb6e;
+  border-radius: 10px 50px 10px 50px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+}
