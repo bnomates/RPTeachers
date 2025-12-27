@@ -10,6 +10,11 @@ async function loadTranslations() {
     updatePageContent(currentLang);
   } catch (e) {
     console.error('Translation error:', e);
+    // If it fails, users will see the empty placeholders,
+    // but at least the page won't be stuck on white.
+  } finally {
+    // ALWAYS reveal the page, success or failure
+    document.body.classList.remove('js-loading');
   }
 }
 
