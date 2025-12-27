@@ -2,70 +2,41 @@
   --primary-color: #2d3436;
   --accent-color: #0984e3;
   --sketch-border: 2px solid #2d3436;
-  --sketch-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-}
-
-/* --- Loading State (Fail-Safe) --- */
-@keyframes safety-reveal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-body {
-  /* Smoothly transition opacity */
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
-}
-
-body.js-loading {
-  opacity: 0;
-  pointer-events: none;
-  /* SAFETY NET: Force page to appear after 1.5s even if Fetch/JS fails */
-  animation: safety-reveal 0.5s forwards 1.5s;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: var(--primary-color);
+  color: #2d3436;
   overflow-x: hidden;
   background-color: #fdfdfd;
 }
 
-/* --- Typography --- */
 h1,
 h2,
 h3,
 .navbar-brand,
-.btn-sketch-cta,
-.age-badge {
+.btn-sketch-cta {
   font-family: 'Patrick Hand', cursive;
 }
 
-/* --- Components --- */
-
-/* Navbar */
 .sketch-nav {
   background: white;
   border-bottom: var(--sketch-border);
 }
 
-/* Age Badge */
 .age-badge {
   display: inline-block;
   padding: 2px 12px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid #2d3436;
   border-radius: 15px 5px 15px 5px / 5px 15px 5px 15px;
+  font-family: 'Patrick Hand', cursive;
   font-size: 1.1rem;
+  color: #2d3436;
 }
 
-/* Sketchy Card Effect */
 .sketch-card {
   border: var(--sketch-border);
-  border-radius: var(--sketch-radius);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   transition: transform 0.3s ease;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
@@ -74,30 +45,22 @@ h3,
   transform: translateY(-5px) rotate(-1deg);
 }
 
-/* Underlines */
 .sketch-underline {
   border-bottom: 3px solid #fdcb6e;
   line-height: 1.1;
   padding-bottom: 5px;
 }
 
-/* Inputs */
 .sketch-input {
   border: var(--sketch-border);
   border-radius: 4px 10px 4px 10px / 10px 4px 10px 4px;
 }
 
-.sketch-input:focus {
-  box-shadow: none;
-  border-color: #fdcb6e;
-}
-
-/* Image Frames */
 .sketch-image-frame {
   border: var(--sketch-border);
   padding: 10px;
   background: #fff;
-  border-radius: var(--sketch-radius);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
@@ -111,12 +74,10 @@ h3,
   transform: scale(1.03) rotate(1deg);
 }
 
-/* Buttons */
 .btn-sketch-cta {
   background-color: #fdcb6e;
-  color: #000;
   border: var(--sketch-border);
-  border-radius: var(--sketch-radius);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   padding: 10px 30px;
   font-size: 1.5rem;
   transition: all 0.2s;
@@ -125,18 +86,13 @@ h3,
 .btn-sketch-cta:hover {
   background-color: #f1c40f;
   transform: scale(1.05);
-  color: #000;
 }
 
-/* --- Sections --- */
-
-/* Hero */
 .hero-section {
-  min-height: 80vh;
+  height: 80vh;
   background: url('../assets/hero.png') center/cover no-repeat;
   position: relative;
-  margin-top: 56px; /* Offset for fixed navbar */
-  padding: 4rem 0;
+  margin-top: 60px;
 }
 
 .overlay {
@@ -148,7 +104,6 @@ h3,
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Testimonial Quote */
 .sketch-quote {
   border-left: 5px solid #fdcb6e;
   border-radius: 10px 50px 10px 50px;
