@@ -30,6 +30,8 @@ Before linking Git, ensure the target folder on Hostinger is empty to avoid conf
 
 ---
 
+xxx
+
 ## Step 2: Configure Hostinger Git Integration
 
 1.  Go back to the **hPanel Dashboard** for your website.
