@@ -4,7 +4,7 @@ let translations = {};
 async function initI18n() {
   try {
     // Points back to your Hostinger folder structure
-    const response = await fetch('assets/translations.json');
+    const response = await fetch('js/translations.json');
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
