@@ -10,16 +10,12 @@ async function loadTranslations() {
     updatePageContent(currentLang);
   } catch (e) {
     console.error('Translation error:', e);
-    // If it fails, users will see the empty placeholders,
-    // but at least the page won't be stuck on white.
   } finally {
-    // ALWAYS reveal the page, success or failure
     document.body.classList.remove('js-loading');
   }
 }
 
 // --- 2. Helper: Walk the JSON Tree ---
-// Converts "navbar.contact" into translations[lang]['navbar']['contact']
 function resolvePath(obj, path) {
   return path.split('.').reduce((prev, curr) => {
     return prev ? prev[curr] : null;
@@ -33,11 +29,8 @@ function updatePageContent(lang) {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const keyPath = el.getAttribute('data-i18n');
     const text = resolvePath(translations[lang], keyPath);
-
     if (text) {
       el.innerText = text;
-    } else {
-      console.warn(`Missing translation key: ${keyPath}`);
     }
   });
 }
@@ -54,40 +47,67 @@ document.getElementById('lang-toggle').addEventListener('click', function () {
   updatePageContent(currentLang);
 });
 
-// --- 6. Form Submission ---
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  if (!translations[currentLang]) return;
+// --- 6. REAL Form Submission ---
+document
+  .getElementById('contactForm')
+  .addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-  const btn = document.getElementById('submitBtn');
+    if (!translations[currentLang]) return;
 
-  // Use nested keys for button states
-  btn.innerText = resolvePath(
-    translations[currentLang],
-    'contact.form.sending'
-  );
-  btn.disabled = true;
-
-  setTimeout(() => {
+    const btn = document.getElementById('submitBtn');
     const responseDiv = document.getElementById('formResponse');
-    const successMsg = resolvePath(
+
+    // 1. Set Loading State
+    const originalBtnText = btn.innerText;
+    btn.innerText = resolvePath(
       translations[currentLang],
-      'contact.form.success'
+      'contact.form.sending'
     );
+    btn.disabled = true;
 
-    responseDiv.innerHTML = `<span class="text-success fw-bold">${successMsg}</span>`;
+    // 2. Gather Data
+    const formData = new FormData(this);
+    const jsonData = Object.fromEntries(formData.entries());
 
-    this.reset();
+    try {
+      // 3. Send to PHP
+      const response = await fetch('mail.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData),
+      });
 
-    const originalBtnText = resolvePath(
-      translations[currentLang],
-      'contact.form.btn'
-    );
-    btn.innerText = originalBtnText;
-    btn.disabled = false;
+      // 4. Handle Result
+      if (response.ok) {
+        // Success
+        const successMsg = resolvePath(
+          translations[currentLang],
+          'contact.form.success'
+        );
+        responseDiv.innerHTML = `<span class="text-success fw-bold">${successMsg}</span>`;
+        this.reset();
+      } else {
+        // Server Error
+        responseDiv.innerHTML = `<span class="text-danger fw-bold">Error sending message. Please try again.</span>`;
+      }
+    } catch (error) {
+      // Network Error
+      console.error('Error:', error);
+      responseDiv.innerHTML = `<span class="text-danger fw-bold">Network error. Please check your connection.</span>`;
+    } finally {
+      // 5. Reset Button
+      btn.innerText = resolvePath(
+        translations[currentLang],
+        'contact.form.btn'
+      ); // Reset to correct language text
+      btn.disabled = false;
 
-    setTimeout(() => {
-      responseDiv.innerHTML = '';
-    }, 5000);
-  }, 1500);
-});
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        responseDiv.innerHTML = '';
+      }, 5000);
+    }
+  });
