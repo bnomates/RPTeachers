@@ -32,6 +32,27 @@
           }
         }
       },
+      "booklist": {
+        "title": "Suggested Reading",
+        "subtitle": "Example novels to study for each stage.",
+        "cards": {
+          "foundation": {
+            "title": "Foundation",
+            "age": "Ages 8-12",
+            "text": "Building confidence in English literacy and numeracy. We turn curiosity into structured learning habits."
+          },
+          "core": {
+            "title": "The Core",
+            "age": "Ages 13-16",
+            "text": "IGCSE preparation. Deep diving into sciences, humanities, and critical thinking required for global exams."
+          },
+          "university": {
+            "title": "Oliver Twist",
+            "age": "Ages 17-19",
+            "text": "his story is about a poor orphan named Oliver in old London. He leaves a workhouse and joins a gang of thieves led by Fagin. The book includes secrets about his family and a tragic murder. It shows the hard reality of life for poor people in Victorian England."
+          }
+        }
+      },
       "teachers": {
         "title": "Meet Paul & Rebeca",
         "subtitle": "Bridging the cultural gap between Spain and the UK.",
