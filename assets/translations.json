@@ -1,0 +1,112 @@
+{
+  "en": {
+    "nav": {
+      "methodology": "Methodology",
+      "teachers": "The Teachers",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "British Education in La Palma",
+      "subtitle": "Preparing ages 8–19 for UK Universities using the Cambridge Curriculum.",
+      "cta": "Join Waiting List"
+    },
+    "sections": {
+      "methodology": {
+        "title": "The CEQ Roadmap",
+        "subtitle": "A guided journey from Primary to University.",
+        "cards": {
+          "foundation": {
+            "title": "Foundation",
+            "age": "Ages 8-12",
+            "text": "Building confidence in English literacy and numeracy. We turn curiosity into structured learning habits."
+          },
+          "core": {
+            "title": "The Core",
+            "age": "Ages 13-16",
+            "text": "IGCSE preparation. Deep diving into sciences, humanities, and critical thinking required for global exams."
+          },
+          "university": {
+            "title": "University Ready",
+            "age": "Ages 17-19",
+            "text": "A-Levels and university applications. We guide students into top UK institutions."
+          }
+        }
+      },
+      "teachers": {
+        "title": "Meet Paul & Rebeca",
+        "subtitle": "Bridging the cultural gap between Spain and the UK.",
+        "text": "With Paul's British academic background and Rebeca's local Spanish roots, we understand the challenges your children face. We provide a disciplined yet nurturing environment where bilingualism is a superpower, not a hurdle."
+      },
+      "testimonial": {
+        "text": "\"R&P Teachers completely changed our son's outlook on school. He is now confident, English-fluent, and excited about university.\""
+      },
+      "contact": {
+        "title": "Get in Touch",
+        "form": {
+          "name": "Name",
+          "email": "Email",
+          "message": "Message",
+          "button": "Send Message"
+        }
+      }
+    },
+    "responses": {
+      "sent": "Message sent!"
+    }
+  },
+  "es": {
+    "nav": {
+      "methodology": "Metodología",
+      "teachers": "Los Profesores",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "title": "Educación Británica en La Palma",
+      "subtitle": "Preparando a alumnos de 8 a 19 años para universidades británicas con el currículo de Cambridge.",
+      "cta": "Lista de Espera"
+    },
+    "sections": {
+      "methodology": {
+        "title": "La Ruta CEQ",
+        "subtitle": "Un viaje guiado desde Primaria hasta la Universidad.",
+        "cards": {
+          "foundation": {
+            "title": "Base",
+            "age": "8-12 años",
+            "text": "Fomentando la confianza en lectoescritura y matemáticas en inglés. Transformamos la curiosidad en hábitos de estudio."
+          },
+          "core": {
+            "title": "El Núcleo",
+            "age": "13-16 años",
+            "text": "Preparación para IGCSE. Profundizando en ciencias, humanidades y pensamiento crítico para exámenes globales."
+          },
+          "university": {
+            "title": "Rumbo Universidad",
+            "age": "17-19 años",
+            "text": "A-Levels y solicitudes universitarias. Guiamos a los estudiantes hacia las mejores instituciones del Reino Unido."
+          }
+        }
+      },
+      "teachers": {
+        "title": "Conoce a Paul y Rebeca",
+        "subtitle": "Uniendo la brecha cultural entre España y el Reino Unido.",
+        "text": "Con la formación académica británica de Paul y las raíces palmeras de Rebeca, entendemos los retos de sus hijos. Ofrecemos un entorno disciplinado pero enriquecedor donde el bilingüismo es un superpoder."
+      },
+      "testimonial": {
+        "text": "\"R&P Teachers cambió por completo la actitud de nuestro hijo hacia los estudios. Ahora tiene confianza, fluidez y está motivado por la universidad.\""
+      },
+      "contact": {
+        "title": "Contacta con Nosotros",
+        "form": {
+          "name": "Nombre",
+          "email": "Correo",
+          "message": "Mensaje",
+          "button": "Enviar Mensaje"
+        }
+      }
+    },
+    "responses": {
+      "sent": "¡Mensaje enviado!"
+    }
+  }
+}
